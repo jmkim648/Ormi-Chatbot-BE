@@ -83,7 +83,7 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 ![MINDMAP_1](https://github.com/STP-TP/CMI.DB-Collector/assets/22714585/d6b0f005-cd91-4356-bfb9-f8d5b57bcc0f)
 
 ### [ERD]
-![ERD_1](https://github.com/STP-TP/CMI.DB-Collector/assets/22714585/7660e36a-06c0-4d20-b8e6-51f7fd83592c)
+![ERD_2](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/87b9f9e3-1d1a-4545-a619-4010078c9318)
 
 ### [Folder Tree]
 
