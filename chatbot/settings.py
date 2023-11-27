@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'dj_rest_auth.registration',
     # custom app
-    'main',
     'accounts',
     'board',
     'chat',

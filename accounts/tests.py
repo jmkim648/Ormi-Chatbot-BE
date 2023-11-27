@@ -1,36 +1,42 @@
 from django.test import TestCase
 from django.urls import reverse
-from django.contrib.auth import get_user_model
+from rest_framework.test import APIClient
+from rest_framework_simplejwt.tokens import RefreshToken
+from .models import CustomUser
 
 class CustomUserTests(TestCase):
     def setUp(self):
-        self.user = get_user_model().objects.create_user(
-            email='test@test.com',
-            password='password',
-            nickname='testuser'
-        )
-        self.manager_user = get_user_model().objects.create_user(
-            email='manager@test.com',
-            password='password',
-            nickname='manager',
-            is_manager=True
-        )
-        self.client.login(email='test@test.com', password='password')
-        # self.client.login(email='manager@test.com', password='password')
+        self.client = APIClient()
 
     # create test
     def test_create_user(self):
         '''user create test'''
-        print('===user create===')
-        self.assertEqual(self.user.email, 'test@test.com')
-        self.assertEqual(self.user.nickname, 'testuser')
-        self.assertTrue(self.user.is_active)
+        print('===user create test===')
+        url = reverse('signup')
+        response = self.client.post(url, 
+            {'email': 'test@test.com', 'password': 'testtest1', 'password2': 'testtest1', 'nickname': 'testuser'}, 
+            format='json')
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(CustomUser.objects.count(), 1)
+        self.assertEqual(CustomUser.objects.get(id=1).email, 'test@test.com')
+        self.assertEqual(CustomUser.objects.get(id=1).nickname, 'testuser')
+        self.assertTrue(CustomUser.objects.get(id=1).is_active)
 
-    # profile 페이지 DRF 구현 시 수정 필요
-    def test_profile_view(self):
-        '''user profile test'''
-        print('===user profile===')
-        url = reverse('profile')
-        response = self.client.get(url)
+    def test_login_user(self):
+        '''user login test'''
+        print('===user login test===')
+        url = reverse('signup')
+        response = self.client.post(url, 
+            {'email': 'test@test.com', 'password': 'testtest1', 'password2': 'testtest1', 'nickname': 'testuser'}, 
+            format='json')
+        
+        url = reverse('login')
+        response = self.client.post(url,
+            {'email': 'test@test.com', 'password':'testtest1'},
+            format='json'
+        )
+        user = self.client.login(email='test@test.com', password='testtest1')
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, self.user.nickname)
+        self.assertTrue(response.data['refresh'])
+        self.assertTrue(response.data['access'])
+        self.assertTrue(user)
