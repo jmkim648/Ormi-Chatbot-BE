@@ -1,12 +1,6 @@
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenRefreshSerializer
-from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.settings import api_settings
-
-from django.contrib.auth import authenticate
-from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate, get_user_model
 from django.contrib.auth.password_validation import validate_password
-
 
 User = get_user_model()
 

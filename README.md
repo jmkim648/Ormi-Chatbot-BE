@@ -83,11 +83,12 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 ![MINDMAP_1](https://github.com/STP-TP/CMI.DB-Collector/assets/22714585/d6b0f005-cd91-4356-bfb9-f8d5b57bcc0f)
 
 ### [ERD]
-![ERD_2](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/87b9f9e3-1d1a-4545-a619-4010078c9318)
+![ERD_3](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/2eb0b074-848a-4413-8d41-919210819711)
 
 ### [Folder Tree]
 
 ### [Flowchart]
+![플로우차트_1](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/490744aa-da5d-4420-a8c2-436be81d3142)
 
 ### [Wireframe]
 
