@@ -23,6 +23,7 @@ class ChatListView(APIView):
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, chat_pk):
@@ -35,11 +36,11 @@ class ChatListView(APIView):
         chat_post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-@throttle_classes([UserRateThrottle])
+
 class ChatDetailView(APIView):
     permission_classes = [IsOwnerAndAuthenticated]
-    throttle_classes = [UserRateThrottle]
-    throttle_scope = "post"
+    # throttle_classes = [UserRateThrottle]
+    # throttle_scope = "post"
 
     def get(self, request, chat_pk):
         chat_post = get_object_or_404(ChatPost, pk=chat_pk, user=request.user)
@@ -52,14 +53,11 @@ class ChatDetailView(APIView):
         serializer = ChatMessageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(chatpost=chat_post, is_user=True)
-            # return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
+            print(serializer.errors)
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-        # user_messages = [message.content for message in ChatMessage.objects.filter(chatpost=chat_post, is_user=True).order_by('created_at')]
         user_message = ChatMessage.objects.filter(chatpost=chat_post, is_user=True).order_by('-created_at').first()
-
-        # assistant_messages = [message.content for message in ChatMessage.objects.filter(chatpost=chat_post, is_user=False).order_by('created_at')]
 
         chatbot_response = OpenAIAPI.generate_response(user_message.content, chat_post.language, chat_post.convention)
 
@@ -79,4 +77,3 @@ class ChatDetailView(APIView):
         })
 
         return Response(serializer.data, status=status.HTTP_200_OK)
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)

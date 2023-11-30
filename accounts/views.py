@@ -88,8 +88,3 @@ class UserViewSet(ModelViewSet):
 
         user.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
-
-signup = UserCreateAPIView.as_view()
-login = LoginView.as_view()
-logout = LogoutView.as_view()
