@@ -5,7 +5,7 @@ from django.utils import timezone
 User = get_user_model()
 
 def post_thumbnail_path(instance, filename):
-    return f'post_thumbnails/post_{instance.post.id}/{filename}'
+    return f'post_thumbnails/post_{instance.id}/{filename}'
 
 
 class Post(models.Model):
