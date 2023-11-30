@@ -2,11 +2,11 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 from .models import CustomUser
 
+
 class CustomUserTests(TestCase):
     def setUp(self):
         self.client = APIClient()
 
-    # create test
     def test_create_user(self):
         '''
         user create test
