@@ -52,14 +52,10 @@ class ChatDetailView(APIView):
         serializer = ChatMessageSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(chatpost=chat_post, is_user=True)
-            # return Response(serializer.data, status=status.HTTP_201_CREATED)
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-        # user_messages = [message.content for message in ChatMessage.objects.filter(chatpost=chat_post, is_user=True).order_by('created_at')]
         user_message = ChatMessage.objects.filter(chatpost=chat_post, is_user=True).order_by('-created_at').first()
-
-        # assistant_messages = [message.content for message in ChatMessage.objects.filter(chatpost=chat_post, is_user=False).order_by('created_at')]
 
         chatbot_response = OpenAIAPI.generate_response(user_message.content, chat_post.language, chat_post.convention)
 
@@ -79,4 +75,3 @@ class ChatDetailView(APIView):
         })
 
         return Response(serializer.data, status=status.HTTP_200_OK)
-        # return Response(serializer.data, status=status.HTTP_201_CREATED)
