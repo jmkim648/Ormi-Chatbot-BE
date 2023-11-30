@@ -161,8 +161,8 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 ## <API 명세>
 |URL|페이지 설명|GET|POST|PUT|DELETE|
 |------|---|:---:|:---:|:---:|:---:|
-|/accounts/login|로그인|[ ]|[x]|[ ]|[ ]|
-|/accounts/logout|로그아웃|[ ]|[x]|[ ]|[ ]|
+|/accounts/login|로그인| [ ] | [x] | [ ] | [ ] |
+|/accounts/logout|로그아웃| [ ] | [x] | [ ] | [ ] |
 |/accounts/signup|회원가입|[ ]|[x]|[ ]|[ ]|
 |/accounts/profile|프로필 <br> 프로필 수정 <br> 회원 탈퇴|[x]|[ ]|[x]|[x]|
 |/accounts/token/refresh|토큰갱신|- [ ]|- [x]|- [ ]|- [ ]|
