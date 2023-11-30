@@ -271,7 +271,8 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
  - title, content, category, head_image를 입력하고 POST요청을 하면 게시물이 생성됩니다.
  - image의 경우 비워둘 수 있으며, created_at, updated_at은 자동설정됩니다.
 
-### [![request_board_notice_create](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/e841b8e0-a8c2-49ca-ab6f-ee0b6944b601)]
+### ['공지' 카테고리 권한]
+  ![request_board_notice_create](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/e841b8e0-a8c2-49ca-ab6f-ee0b6944b601)
 
  - 게시글 작성 중 관리자 권한이 없는 회원이 '공지' category를 설정하면 '공지글은 관리자만 작성할 수 있습니다.'라는 error 메세지를 발송합니다.
 
