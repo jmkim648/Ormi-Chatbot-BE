@@ -8,7 +8,7 @@ class ChatPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     language = models.CharField(max_length=20)
-    convention = models.CharField(max_length=100)
+    convention = models.CharField(max_length=100, null=True, blank=True, default='없음')
 
     def __str__(self):
         return f"채팅방 : {self.id}, 유저 : {self.user.email}"
