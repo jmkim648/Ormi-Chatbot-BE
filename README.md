@@ -185,12 +185,12 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 |/accounts/login|로그인| |✔️| | | | |
 |/accounts/logout|로그아웃| |✔️| | | | |
 |/accounts/signup|회원가입| |✔️| | | | |
-|/accounts/profile|프로필 <br> 프로필 수정 <br> 회원 탈퇴|✔️| |✔️|✔️|✔️ <br> ✔️ <br> ✔️|<br> ✔️ <br> ✔️
+|/accounts/profile|프로필 <br> 프로필 수정 <br> 회원 탈퇴|✔️<br> <br> <br>| |✔️|<br><br>✔️|✔️ <br> ✔️ <br> ✔️|<br> ✔️ <br> ✔️
 |/accounts/token/refresh|토큰갱신| |✔️| | | | |
-|/board|게시글 목록 <br> 게시글 생성|✔️|✔️| | | <br> ✔️| |
-|/board/{postid}|게시글 상세 <br> 게시글 수정 <br> 게시글 삭제|✔️| |✔️|✔️| <br> ✔️ <br> ✔️ | <br> ✔️ <br> ✔️
-|/chat|채팅 목록 <br> 채팅 생성|✔️|✔️| |✔️| ✔️<br>✔️| 
-|/chat/{chatid}|채팅 상세 <br> 메시지 발송 <br> 채팅 삭제|✔️|✔️| | | ✔️ <br> ✔️ <br> ✔️ | ✔️ <br> ✔️ <br> ✔️
+|/board|게시글 목록 <br> 게시글 생성|✔️<br><br>|<br>✔️| | | <br> ✔️| |
+|/board/{postid}|게시글 상세 <br> 게시글 수정 <br> 게시글 삭제|✔️<br><br><br>| |✔️|<br><br>✔️| <br> ✔️ <br> ✔️ | <br> ✔️ <br> ✔️
+|/chat|채팅 목록 <br> 채팅 생성|✔️<br><br>|<br>✔️| | | ✔️<br>✔️| 
+|/chat/{chatid}|채팅 상세 <br> 메시지 발송 <br> 채팅 삭제|✔️<br><br><br>|✔️| |<br><br>✔️ | ✔️ <br> ✔️ <br> ✔️ | ✔️ <br> ✔️ <br> ✔️
 
 - 게시판 글 작성 중 카테고리가 '공지'인 경우, 매니저 권한이 있는 회원만 글을 작성할 수 있습니다.
 
