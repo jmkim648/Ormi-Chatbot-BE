@@ -79,6 +79,12 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 
 ## <주요 기능>
 
+### [메인화면]
+![메인화면](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/64e275bf-433b-46fe-b0c4-d6a537cae151)
+
+### [WBS]
+![WBS](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/d3cc138d-05e3-49c5-b7b7-935a1003506f)
+
 ### [Mindmap]
 ![MINDMAP_1](https://github.com/STP-TP/CMI.DB-Collector/assets/22714585/d6b0f005-cd91-4356-bfb9-f8d5b57bcc0f)
 
@@ -87,11 +93,64 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 
 ### [Folder Tree]
 
+```
+📦 Ormi-Chatbot-BE
+├─ .gitignore
+├─ README.md
+├─ accounts
+│  ├─ __init__.py
+│  ├─ admin.py
+│  ├─ apps.py
+│  ├─ migrations
+│  ├─ models.py
+│  ├─ serializers.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  └─ views.py
+├─ board
+│  ├─ __init__.py
+│  ├─ admin.py
+│  ├─ apps.py
+│  ├─ migrations
+│  ├─ models.py
+│  ├─ permissions.py
+│  ├─ serializers.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  └─ views.py
+├─ chat
+│  ├─ __init__.py
+│  ├─ admin.py
+│  ├─ apps.py
+│  ├─ migrations
+│  ├─ models.py
+│  ├─ permissions.py
+│  ├─ serializers.py
+│  ├─ tests.py
+│  ├─ urls.py
+│  └─ views.py
+├─ chatbot
+│  ├─ __init__.py
+│  ├─ asgi.py
+│  ├─ settings.py
+│  ├─ urls.py
+│  ├─ utils
+│  │  └─ openAI_API.py
+│  └─ wsgi.py
+├─ manage.py
+└─ requirements.txt
+```
+
 ### [Flowchart]
 ![플로우차트_1](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/490744aa-da5d-4420-a8c2-436be81d3142)
 
 ### [Wireframe]
-
+|||
+|------|---|
+|![01_Main](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/16f32e2c-3882-49b2-b666-296c61230a1f)메인화면|![02_Login](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/1075c75b-bed8-40fe-a73f-3ddcd0f2ffda)로그인|
+|![03_Signup](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/73a7819c-fee5-444b-a2f9-a510b0497fd1)회원가입|![04_Profile](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/79f65ed5-f5ef-4530-af86-8358286a1f2c)프로필|
+|![05_Board](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/b60ec794-cc85-4020-833b-63e52c4a7d89)게시판리스트|![06_Board detail](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/718f49bf-5788-4f2f-ae46-834d60102c84)게시판 디테일|
+|![07_Chat](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/9a6df776-78af-4beb-a6cd-f4dbc18d2c7f)채팅리스트|![08_Chat detail](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/deb6c742-3f28-499c-bd52-bfe9ed792b46)채팅 디테일|
 
 <div align="right">
 
@@ -100,7 +159,17 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 </div>
 
 ## <API 명세>
-
+|URL|페이지 설명|GET|POST|PUT|DELETE|
+|------|---|:---:|:---:|:---:|:---:|
+|/accounts/login|로그인|- [ ]|- [x]|- [ ]|- [ ]|
+|/accounts/logout|로그아웃|- [ ]|- [x]|- [ ]|- [ ]|
+|/accounts/signup|회원가입|- [ ]|- [x]|- [ ]|- [ ]|
+|/accounts/profile|프로필 <br> 프로필 수정 <br> 회원 탈퇴|- [x]|- [ ]|- [x]|- [x]|
+|/accounts/token/refresh|토큰갱신|- [ ]|- [x]|- [ ]|- [ ]|
+|/board|게시글 목록 <br> 게시글 생성|- [x]|- [x]|- [ ]|- [ ]|
+|/board/{postid}|게시글 상세 <br> 게시글 수정 <br> 게시글 삭제|- [x]|- [ ]|- [x]|- [x]|
+|/chat|채팅 목록 <br> 채팅 생성 <br> 채팅 삭제|- [x]|- [x]|- [ ]|- [x]|
+|/chat/{chatid}|채팅 상세 <br> 메시지 발송|- [x]|- [x]|- [ ]|- [ ]|
 
 
 <div align="right">
