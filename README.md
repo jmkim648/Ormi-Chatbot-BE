@@ -165,7 +165,7 @@ FE Repository : https://github.com/jmkim648/Ormi-Chatbot-FE
 ### [Flowchart]
 ![플로우차트_1](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/490744aa-da5d-4420-a8c2-436be81d3142)
 
-### [Mockup Page]
+### [WireFrame]
 |||
 |------|---|
 |![01_Main](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/16f32e2c-3882-49b2-b666-296c61230a1f)메인화면|![02_Login](https://github.com/jmkim648/Ormi-Chatbot-BE/assets/22714585/1075c75b-bed8-40fe-a73f-3ddcd0f2ffda)로그인|
